@@ -16,7 +16,7 @@ Creator: *Tommy Sundling*
 
 ### Learn more
 
-- For more information see [the wiki]().
+- For more information see [the wiki](/docs/home.md).
 
 &nbsp;
 -----------------------------------------------------------------
