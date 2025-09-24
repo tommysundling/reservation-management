@@ -1,5 +1,5 @@
 
-# Azure Reservation Management?
+# Azure Reservation Management
 
 ## What is it?
 
