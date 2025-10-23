@@ -12,7 +12,7 @@ The possibility to [reserve resources in Azure](https://docs.microsoft.com/en-us
 Note: Past experiences indicate that organizations can expect to save 20-40% of an organization's total VM compute cost by using a centralized management approach for reservations.
 `
 
-The **Azure Reservation Management** offering provides a framework that provides an initial set of processes, practices and tools for how to establish centralized management of reservations in an organization.
+The **Azure Reservation Management** offering provides a **Proof of Concept** framework that provides an initial set of processes, practices and tools for how to establish centralized management of reservations in an organization.
 
 <img width="1305" height="951" alt="{8863D18A-49FB-449B-AA34-E44E389FDDC2}" src="https://github.com/user-attachments/assets/00e62b60-7aaf-493d-89de-12530d1c9b1c" />
 
@@ -23,25 +23,6 @@ Establishing a regular cadence of centrally optimizing the level of reservations
 ### Learn more
 
 - For more information see [the wiki](/docs/home.md).
-
-&nbsp;
------------------------------------------------------------------
-
-## Getting Started
-
-Description: Instructions for installing and using the code or content are provided below.
-
-### Prerequisites
-
-There are no prerequisites required to run this code or use this repository.
-
-### Installing
-
-This repository does not hold installable content.
-
-### Deployment (CI/CD)
-
-At this time, the repository does not use continuous integration or produce a website, artifact, or anything deployed.
 
 ## Access
 
@@ -56,4 +37,5 @@ To use this material you need to have the right to:
 This repository prefers outside contributors start forks rather than branches. For pull requests more complicated than typos, it is often best to submit an issue first.
 
 &nbsp;
+
 Creator: *Tommy Sundling*
