@@ -4,9 +4,11 @@ param (
    [Parameter(Mandatory=$true)]
    [string]$BillingAccountId,
    [Parameter(Mandatory=$true)]
+   [string]$BillingProfileId,
+   [Parameter(Mandatory=$true)]
    $AuthenticationHeaders,
 
-   # The end date should be the same date as the date when the UsageDetails for the last month where downloaded
+   # The end date should be the same date as the when the UsageDetails for the last where downloaded
    [datetime]$endDate = [datetime]::Today,
    [datetime]$startDate = $endDate.AddMonths(-3)
 )
@@ -29,7 +31,7 @@ while ($currentDate -le $endDate) {
    Write-Output "Processing Reservation Summaries from $($monthStart.ToString("yyyy-MM-dd")) to $($monthEnd.ToString("yyyy-MM-dd"))..."
 
    # Your code to process each month goes here
-   $apiUrl = "https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$($BillingAccountId)/providers/Microsoft.Consumption/reservationsummaries?api-version=2019-10-01&grain=daily&`$filter=properties/UsageDate+ge+$($monthStart.ToString("yyyy-MM-dd"))+AND+properties/UsageDate+le+$($monthEnd.ToString("yyyy-MM-dd"))"
+   $apiUrl = "https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$($BillingAccountId)/billingProfiles/$($BillingProfileId)/providers/Microsoft.Consumption/reservationsummaries?api-version=2024-08-01&grain=daily&startDate=$($monthStart.ToString('yyyy-MM-dd'))&endDate=$($monthEnd.ToString('yyyy-MM-dd'))"
    if($null -eq $results) {
       $results = Invoke-RestMethod -Uri $apiUrl -Method Get -Headers $AuthenticationHeaders
    } else {

@@ -31,7 +31,7 @@
    $filteredData = $filteredData | Where-Object { $_ -notlike "*OpenAI_Provisioned_Throughput*" }
    $filteredData = $filteredData | Where-Object { $_ -notlike "*Per node Std*" }
    $filteredData = $filteredData | Where-Object { $_ -notlike "*AutofitGroup-AtActualPrice*" }
-   # Filter out a duplicated row (will need to be updated if the source file changes)
+   # Filter out a strange duplicated row
    $filteredData = $filteredData | Select-Object -Skip 1 | Where-Object { $_.Sku -ne "Esv3_Type1" }
 
    "Total rows after cleanup: " + $filteredData.Count
