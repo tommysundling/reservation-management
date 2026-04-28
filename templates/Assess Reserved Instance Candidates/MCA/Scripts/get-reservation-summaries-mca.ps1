@@ -31,7 +31,8 @@ while ($currentDate -le $endDate) {
    Write-Output "Processing Reservation Summaries from $($monthStart.ToString("yyyy-MM-dd")) to $($monthEnd.ToString("yyyy-MM-dd"))..."
 
    # Your code to process each month goes here
-   $apiUrl = "https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$($BillingAccountId)/billingProfiles/$($BillingProfileId)/providers/Microsoft.Consumption/reservationsummaries?api-version=2024-08-01&grain=daily&startDate=$($monthStart.ToString('yyyy-MM-dd'))&endDate=$($monthEnd.ToString('yyyy-MM-dd'))"
+   $apiVersion = "api-version=2024-08-01"
+   $apiUrl = "https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$($BillingAccountId)/billingProfiles/$($BillingProfileId)/providers/Microsoft.Consumption/reservationsummaries?$($apiVersion)&grain=daily&startDate=$($monthStart.ToString('yyyy-MM-dd'))&endDate=$($monthEnd.ToString('yyyy-MM-dd'))"
    if($null -eq $results) {
       $results = Invoke-RestMethod -Uri $apiUrl -Method Get -Headers $AuthenticationHeaders
    } else {

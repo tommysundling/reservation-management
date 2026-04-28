@@ -25,7 +25,7 @@
 
    # We make a choice to filter out ISOLATED SKUs to avoid duplicates, note that these could potentially be reserved if they are of significant numbers
    $filteredData = $data | Where-Object { $_ -notlike "*Isolated*" }
-   # Filter out rows containing Skus we're not interested in for VM reservations
+   # Filter out additional rows containing Skus we're not interested in for VM reservations
    $filteredData = $filteredData | Where-Object { $_ -notlike "*Classic Auxiliary Logs Analysis*" }
    $filteredData = $filteredData | Where-Object { $_ -notlike "*Provisioned Throughput - Managed*" }
    $filteredData = $filteredData | Where-Object { $_ -notlike "*OpenAI_Provisioned_Throughput*" }
@@ -34,6 +34,10 @@
    $filteredData = $filteredData | Where-Object { $_ -notlike "*_Managed*" }
    $filteredData = $filteredData | Where-Object { $_ -notlike "*Overage*" }
    $filteredData = $filteredData | Where-Object { $_ -notlike "*vCPU*" }
+   $filteredData = $filteredData | Where-Object { $_ -notlike "*Reservation*" }
+   $filteredData = $filteredData | Where-Object { $_ -notlike "*MDC_PrePurchase_Plan*" }
+   $filteredData = $filteredData | Where-Object { $_ -notlike "*Foundry_Agent_P3*" }
+   
    
    
    function Remove-DuplicateRows {
